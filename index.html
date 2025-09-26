@@ -1,1 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>City Comfortable</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta name="theme-color" content="#b3d1ff">
+  <style>
+    html, body { height: 100%; margin: 0; }
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: #0b2140;
+      background: linear-gradient(180deg, rgba(224,240,255,0.95) 0%, rgba(179,209,255,0.85) 70%, rgba(179,209,255,0) 100%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .wrap { width:100%; max-width:1100px; padding: 24px; box-sizing: border-box; }
+    .header {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.6);
+      border-radius: 12px;
+      padding: 28px 20px;
+      box-shadow: 0 6px 24px rgba(11,33,64,0.08);
+      backdrop-filter: blur(6px);
+    }
+    .logo {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:20px;
+      flex-direction:column;
+      margin-bottom:10px;
+    }
+    .logo-img { max-width:300px; height:auto; display:block; }
+    .buttons { display:flex; justify-content:center; gap:0; margin:18px 0 10px; flex-wrap:wrap; }
+    .btn {
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 12px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 30px 0 0 30px;
+      background: #0078ff;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0,120,255,0.12);
+      margin-right: -2px;
+    }
+    .btn:last-child {
+      border-radius: 0 30px 30px 0;
+      background: #e9e9e9;
+      color: #333;
+      margin-right: 0;
+    }
+    .contact {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      font-size:1rem;
+      letter-spacing:1px;
+      color:#1870ea;
+      margin-top:12px;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    .contact i { font-size:1.15rem; color:#1870ea; }
 
+    /* responsive layout adjustments */
+    @media (max-width: 900px) {
+      .logo-img { max-width:240px; }
+      .btn { padding: 10px 16px; font-size: 0.95rem; }
+      .header { padding: 20px 16px; border-radius: 10px; }
+    }
+    @media (max-width: 420px) {
+      .logo-img { max-width:180px; }
+      .buttons { flex-direction: column; }
+      .btn { border-radius: 12px; margin:6px 0; }
+      .btn:last-child { border-radius: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="header" role="banner">
+      <div class="logo">
+        <img src="/assets/city-comfortable.png" alt="City Comfortable logo" class="logo-img" />
+        <nav class="buttons" role="navigation" aria-label="Primary actions">
+          <button class="btn" aria-label="Need a task done">NEED A TASK DONE?</button>
+          <button class="btn" aria-label="Become a provider">OR BECOME A PROVIDER?</button>
+        </nav>
+        <div class="contact">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+          <span>CONTACT@CITYCOMFORTABLE.COM</span>
+        </div>
+      </div>
+    </header>
+  </div>
+</body>
+</html>
