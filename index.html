@@ -38,10 +38,11 @@
       position: fixed;
       inset: 0;
       z-index: 0;
+      /* Shrink gradient so more sky is visible */
       background: linear-gradient(180deg,
-        rgba(224, 240, 255, 0.95) 0%,
-        rgba(179, 209, 255, 0.85) 70%,
-        rgba(179, 209, 255, 0) 100%);
+        rgba(224, 240, 255, 0.85) 0%,
+        rgba(179, 209, 255, 0.60) 55%,
+        rgba(179, 209, 255, 0) 80%);
     }
 
     .header {
@@ -60,6 +61,22 @@
     .logo-img {
       max-width: 300px;
       height: auto;
+      animation: logo-zoom-in 1.2s cubic-bezier(0.23, 1, 0.32, 1) 0.2s both;
+    }
+
+    @keyframes logo-zoom-in {
+      0% {
+        opacity: 0;
+        transform: scale(0.85) translateY(30px);
+      }
+      60% {
+        opacity: 1;
+        transform: scale(1.05) translateY(-8px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
     }
 
     .buttons {
