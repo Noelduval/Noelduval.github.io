@@ -84,14 +84,7 @@
       justify-content: center;
       margin: 30px 0 10px;
     }
-    .btn {
-      font-size: 1.1rem;
-      font-weight: 700;
-      padding: 18px 32px;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s ease;
-      box-shadow: 0 2px 8px rgba(24, 112, 234, 0.08);
+    /* cleaned up accidental CSS/HTML mix */
     }
     .btn:first-child {
       border-radius: 30px 0 0 30px;
@@ -115,13 +108,13 @@
       gap: 12px;
       font-size: 1.05rem;
       letter-spacing: 2px;
-      color: #1870ea;
+      color: #fff;
       margin-top: 20px;
       font-family: 'Courier New', Courier, monospace;
     }
     .contact i {
       font-size: 1.25rem;
-      color: #1870ea;
+      color: #fff;
     }
 
     @media (max-width: 600px) {
@@ -138,7 +131,7 @@
 <body>
   <!-- Background video -->
   <div class="video-container">
-    <video class="city-video" autoplay loop muted playsinline preload="auto">
+    <video class="city-video" autoplay loop muted playsinline preload="auto" id="bgVideo">
       <source src="/assets/video/city-bg.mp4" type="video/mp4" />
     </video>
   </div>
@@ -147,7 +140,7 @@
   <!-- Main content -->
   <header class="header">
     <div class="logo">
-  <img src="/assets/video/assets/img/city-comfortable.png" alt="City Comfortable Logo" class="logo-img" />
+      <img src="/assets/video/assets/img/city-comfortable.png" alt="City Comfortable Logo" class="logo-img" />
     </div>
 
     <div class="buttons">
@@ -159,8 +152,29 @@
       <a href="https://www.instagram.com/citycomfortable" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
         <i class="fab fa-instagram" aria-hidden="true"></i>
       </a>
-      CONTACT@CITYCOMFORTABLE.COM
+      <span style="color:#fff;">CONTACT@CITYCOMFORTABLE.COM</span>
     </div>
   </header>
+
+  <!-- New homepage headline and description -->
+  <section class="homepage-message" style="margin: 60px auto 0; max-width: 600px; text-align: center;">
+    <div style="font-weight: bold; font-size: 1.5rem; margin-bottom: 18px; letter-spacing: 0.5px;">
+      The fastest way to turn a task into done.
+    </div>
+    <div style="font-size: 1.08rem; color: #0b2140; line-height: 1.6;">
+      We make cities more comfortable by connecting everyday needs with local providers. Post what you need, from moving furniture to grabbing coffee to dropping off important documents, see it done in as little as 30 minutes. Every request opens a way for someone nearby to earn. Real work, real impact, real comfort.
+    </div>
+  </section>
+
+  <script>
+    // Mobile autoplay fallback
+    document.addEventListener('DOMContentLoaded', function() {
+      var vid = document.getElementById('bgVideo');
+      if (vid && vid.paused) {
+        vid.muted = true;
+        vid.play().catch(()=>{});
+      }
+    });
+  </script>
 </body>
 </html>
